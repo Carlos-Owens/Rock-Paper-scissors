@@ -7,17 +7,53 @@ function computerPlay(randomNum) {
         randomNum = "paper";
     }
     else {
-        randomNum = "sissors";
+        randomNum = "scissors";
     }
     return randomNum;
 }
+const selection = window.prompt("Make a choice (Rock, Papers, or Scissors).");
 function playRound(playerSelection,computerSelection) {
-    const playerSelection = window.prompt("Make a choice (Rock, Papers, or Scissors).")
+    playerSelection = selection;
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerPlay;
+    computerSelection = computerPlay();
+    let results = " ";
 
-    // if (playerSelection === "rock" && computerSelection === "rock") {
-    //     alert("Its a tie!");
-    // }
-    
+    if (playerSelection === "rock" && computerSelection === "rock") {
+        results = "Its a tie!";
+        return results;
+    }
+    else if (playerSelection === "rock" && computerSelection === "paper") {
+        results = "You Lose! Paper beats Rock";
+        return results;
+    }
+    else if (playerSelection === "rock" && computerSelection === "scissors") {
+        results = "You Win! Rock beats scissors";
+        return results;
+    }
+    else if (playerSelection === "paper" && computerSelection === "paper") {
+        results = "Its a tie!";
+        return results;
+    }
+    else if (playerSelection === "paper" && computerSelection === "rock") {
+        results = "You Win! Paper beats Rock";
+        return results;
+    }
+    else if (playerSelection === "paper" && computerSelection === "scissors") {
+        results = "You Lose! Scissors beats paper";
+        return results;
+    }
+    else if (playerSelection === "scissors" && computerSelection === "rock") {
+        results = "You Lose! Rock beats Scissors";
+        return results;
+    }
+    else if (playerSelection === "scissors" && computerSelection === "paper") {
+        results = "You Win! Scissors beats Paper";
+        return results;
+    }
+    else {
+        results = "Its a tie!"
+        return results;
+    }
 }
+console.log(playRound());
+//  const selection = window.prompt("Make a choice (Rock, Papers, or Scissors).");
