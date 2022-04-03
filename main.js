@@ -11,11 +11,11 @@ function computerPlay(randomNum) {
     }
     return randomNum;
 }
-const selection = window.prompt("Make a choice (Rock, Papers, or Scissors).");
+// const selection = window.prompt("Make a choice (Rock, Papers, or Scissors).");
 function playRound(playerSelection,computerSelection) {
-    playerSelection = selection;
+    // playerSelection = selection;
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerPlay();
+    // computerSelection = computerPlay();
     let results = " ";
 
     if (playerSelection === "rock" && computerSelection === "rock") {
@@ -55,5 +55,12 @@ function playRound(playerSelection,computerSelection) {
         return results;
     }
 }
-console.log(playRound());
-//  const selection = window.prompt("Make a choice (Rock, Papers, or Scissors).");
+// console.log(playRound());
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("Make a choice (Rock, Papers, or Scissors");
+        computerSelection = computerPlay();
+        console.log(playRound(playerSelection,computerSelection));
+    }
+}
+game();
