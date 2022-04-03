@@ -11,3 +11,13 @@ function computerPlay(randomNum) {
     }
     return randomNum;
 }
+function playRound(playerSelection,computerSelection) {
+    const playerSelection = window.prompt("Make a choice (Rock, Papers, or Scissors).")
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerPlay;
+
+    // if (playerSelection === "rock" && computerSelection === "rock") {
+    //     alert("Its a tie!");
+    // }
+    
+}
