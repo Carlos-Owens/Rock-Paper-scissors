@@ -11,11 +11,10 @@ function computerPlay(randomNum) {
     }
     return randomNum;
 }
-// const selection = window.prompt("Make a choice (Rock, Papers, or Scissors).");
+
 function playRound(playerSelection,computerSelection) {
-    // playerSelection = selection;
+
     playerSelection = playerSelection.toLowerCase();
-    // computerSelection = computerPlay();
     let results = " ";
 
     if (playerSelection === "rock" && computerSelection === "rock") {
@@ -24,10 +23,12 @@ function playRound(playerSelection,computerSelection) {
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
         results = "You Lose! Paper beats Rock";
+        computerScore++
         return results;
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
         results = "You Win! Rock beats scissors";
+        playerScore++
         return results;
     }
     else if (playerSelection === "paper" && computerSelection === "paper") {
@@ -36,18 +37,22 @@ function playRound(playerSelection,computerSelection) {
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
         results = "You Win! Paper beats Rock";
+        +playerScore++
         return results;
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
         results = "You Lose! Scissors beats paper";
+        computerScore++
         return results;
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
         results = "You Lose! Rock beats Scissors";
+        computerScore++
         return results;
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
         results = "You Win! Scissors beats Paper";
+        playerScore++
         return results;
     }
     else {
@@ -55,12 +60,26 @@ function playRound(playerSelection,computerSelection) {
         return results;
     }
 }
-// console.log(playRound());
+
 function game() {
+    playerScore = parseInt(0);
+    computerScore = parseInt(0);
     for (let i = 0; i < 5; i++) {
         playerSelection = prompt("Make a choice (Rock, Papers, or Scissors");
         computerSelection = computerPlay();
         console.log(playRound(playerSelection,computerSelection));
+        console.log("Player score: " + playerScore);
+        console.log("Computer score: " + computerScore);
     }
+    if(playerScore > computerScore) {
+        console.log("Player Wins!");
+    }
+    else if (playerScore < computerScore) {
+        console.log("Computer Wins!");
+    }
+    else {
+        console.log("Draw!");
+    }
+
 }
 game();
